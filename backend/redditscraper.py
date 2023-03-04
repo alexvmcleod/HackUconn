@@ -21,7 +21,7 @@ def download_post(post_id,subreddit="otherstuff"):
     #thing = str(image_url)
     if str(image_url)[-4:] == '.jpg' or str(image_url)[-4:] == '.png':
         image_response = requests.get(image_url)
-        with open(f'images/{subreddit}/{post_id}.png', 'wb') as f:
+        with open(f'backend/images/{subreddit}/{post_id}.png', 'wb') as f:
             f.write(image_response.content)
         return 0
     else:
@@ -31,7 +31,7 @@ def download_post(post_id,subreddit="otherstuff"):
 
 def scrapesubreddit(subredditname,imagelen=100):
     #creates folder for images if none exists
-    folder_path = os.path.join('images',subredditname)
+    folder_path = os.path.join('backend/images',subredditname)
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
 
