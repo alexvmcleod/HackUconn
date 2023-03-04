@@ -27,9 +27,6 @@ def download_post(post_id,subreddit="otherstuff"):
     else:
         print(f"Post '{post_id}' is not a suitable image!")
         return 1
-    # with open(f'images/{subreddit}/{post_id}.png', 'wb') as f:
-    #          f.write(image_response.content)
-    # return 0
 
 
 def scrapesubreddit(subredditname,imagelen=100):
@@ -59,3 +56,7 @@ start = time.time()
 scrapesubreddit('aiArt',100)
 end = time.time()
 print(end-start)
+
+
+
+
